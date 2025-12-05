@@ -4,9 +4,18 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import LaserFlow from "@/components/LaserFlow";
 import BlurText from "@/components/BlurText";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
   const revealImgRef = useRef<HTMLImageElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640); // Tailwind sm breakpoint
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
     <div
@@ -67,21 +76,23 @@ export default function Hero() {
         }}
       >
 
-        <motion.img
-          src="/Broadhead+chevrons.svg"
-          alt="Broadhead Arrow"
-          initial={{ x: -100, opacity: 0 }}       // start off-screen to the left
-          whileInView={{ x: 0, opacity: 0.3 }}    // slide to position with reduced opacity
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          style={{
-            position: "absolute",
-            top: "-25vh",
-            left: "25vh",
-            width: "30vh",
-            height: "auto",
-          }}
-        />
+        {!isMobile && (
+          <motion.img
+            src="/Broadhead+chevrons.svg"
+            alt="Broadhead Arrow Desktop"
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 0.3 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            style={{
+              position: "absolute",
+              top: "-25vh",
+              left: "25vh",
+              width: "30vh",
+              height: "auto",
+            }}
+          />
+        )}
 
         {/* Main title */}
         <motion.div
