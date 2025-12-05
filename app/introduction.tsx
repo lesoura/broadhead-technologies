@@ -14,6 +14,7 @@ export default function Introduction() {
             -mt-20 md:-mt-70 
             -mb-12 md:-mb-30 
             z-50
+            opacity-0 
           "
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
