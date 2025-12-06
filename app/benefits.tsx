@@ -15,7 +15,6 @@ export default function Benefits() {
     {/* Video Background */}
     <video
       data-disable-click
-      playsInline
       className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       src="https://vid.cdn-website.com/b0b5cb2c/videos/HJsN1sJbRMW5h5cPpUTB_AdobeStock_966786656-v.mp4"
       style={{ opacity: 0.7 }}
@@ -23,6 +22,12 @@ export default function Benefits() {
       loop
       muted
     />
+
+    {/* Click-blocker (covers entire video) */}
+    <div
+      className="absolute inset-0 z-10"
+      style={{ touchAction: "none" }}
+    ></div>
 
     {/* Content Overlay */}
     <div className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-12 px-4 sm:px-6 z-30">
