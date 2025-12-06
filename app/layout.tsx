@@ -18,6 +18,20 @@ export const metadata: Metadata = {
   icons: {
     icon: "/bt-tab-icon.png",
   },
+  openGraph: {
+    title: "Digital Contracts Solution | Broadhead Technologies",
+    description: "Do not let outdated systems slow your firm down",
+    url: "https://broadhead-technologies.vercel.app/",
+    siteName: "Broadhead Technologies",
+    images: [
+      {
+        url: "https://lirp.cdn-website.com/b0b5cb2c/dms3rep/multi/opt/1200x630+broadside+OG+Image-1920w.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
+  },
 };
 
 export default function RootLayout({
