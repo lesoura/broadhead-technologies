@@ -14,6 +14,8 @@ export default function Benefits() {
     <section className="w-full relative h-auto py-16 sm:py-20">
     {/* Video Background */}
     <video
+      data-disable-click
+      playsInline
       className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
       src="https://vid.cdn-website.com/b0b5cb2c/videos/HJsN1sJbRMW5h5cPpUTB_AdobeStock_966786656-v.mp4"
       style={{ opacity: 0.7 }}

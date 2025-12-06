@@ -119,5 +119,8 @@
   body {
     @apply bg-background text-foreground;
   }
-}
 
+  video[disabledclick] {
+    pointer-events: none !important;
+  }
+}
