@@ -45,20 +45,21 @@ export default function Home() {
             <Introduction />
 
             <div className="relative h-0">
-              <motion.img
-                src="/cjc-qr-mockup2.png"
-                alt="QR Mockup"
-                initial={{ x: 200, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="
-                  absolute -right-47 -top-30
-                  w-[520px] md:w-[720px] lg:w-[880px]
-                  opacity-40 md:opacity-100
-                  pointer-events-none select-none z-30
-                "
-              />
+            <motion.img
+              src="/cjc-qr-mockup2.png"
+              alt="QR Mockup"
+              initial={{ x: 200, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="
+                hidden md:block md:absolute md:-right-74 md:top-14      /* tablet/iPad */
+                lg:-right-47 lg:-top-26                                  /* desktop/PC */
+                w-[520px] md:w-[720px] lg:w-[880px]
+                md:opacity-100 lg:opacity-100
+                pointer-events-none select-none z-30
+              "
+            />
             </div>
 
             <Benefits />
